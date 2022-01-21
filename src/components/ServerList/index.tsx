@@ -1,0 +1,22 @@
+import { ServerButton } from '../ServerButton';
+
+import { Container, Separator } from './styles';
+
+export function ServerList() {
+  return (
+    <Container>
+      <ServerButton isHome />
+
+      <Separator />
+
+      <ServerButton />
+      <ServerButton hasNotifications />
+      <ServerButton mentions={3} />
+      <ServerButton />
+      <ServerButton />
+      <ServerButton />
+      <ServerButton mentions={55} />
+      <ServerButton />
+    </Container>
+  );
+}
