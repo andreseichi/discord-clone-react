@@ -43,7 +43,7 @@ export const Role = styled.span`
 
 export const User = styled.div`
   margin-top: 2px;
-  padding: 8px;
+  padding: 6px 8px;
   display: flex;
   align-items: center;
   cursor: pointer;
