@@ -13,6 +13,8 @@ export const Container = styled.div`
   border-radius: 5px;
   background-color: transparent;
 
+  margin-left: 10px;
+
   transition: background-color 0.2s;
 
   > div {

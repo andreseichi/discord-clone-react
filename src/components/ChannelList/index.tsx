@@ -1,11 +1,20 @@
 import { ChannelButton } from '../ChannelButton';
-import { Container, Category, AddCategoryIcon } from './styles';
+import {
+  Container,
+  Category,
+  ChannelName,
+  AddCategoryIcon,
+  ExpandIcon,
+} from './styles';
 
 export function ChannelList() {
   return (
     <Container>
       <Category>
-        <span>Canais de texto</span>
+        <ChannelName>
+          <ExpandIcon />
+          <span>Canais de texto</span>
+        </ChannelName>
 
         <AddCategoryIcon />
       </Category>
