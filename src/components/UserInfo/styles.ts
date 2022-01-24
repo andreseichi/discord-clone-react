@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Mic, Headset, Settings } from 'styled-icons/material';
 
+import { UserInfoProps } from '.';
+
 export const Container = styled.div`
   grid-area: UI;
   display: flex;
@@ -17,12 +19,49 @@ export const Profile = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.div<UserInfoProps>`
   width: 32px;
   height: 32px;
   border-radius: 50%;
 
+  cursor: pointer;
+
   background-color: var(--gray);
+
+  position: relative;
+
+  &:hover {
+    > img {
+      filter: brightness(0.9);
+    }
+  }
+
+  > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    background-color: var(--online);
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+
+    border-radius: 12px;
+    border: 4px solid var(--quaternary);
+
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--white);
+
+    display: ${(props) => (props.isOnline ? 'inline' : 'none')};
+  }
 `;
 
 export const UserData = styled.div`
@@ -30,6 +69,8 @@ export const UserData = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  cursor: pointer;
 
   > strong {
     font-size: 13px;

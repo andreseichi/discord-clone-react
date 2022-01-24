@@ -15,7 +15,10 @@ export function Layout() {
       <ServerName />
       <ChannelInfo />
       <ChannelList />
-      <UserInfo />
+      <UserInfo
+        isOnline
+        url="https://cdn.discordapp.com/avatars/394191672348508182/ed041761540ba7cd40b17ef871db29d9.webp?size=32"
+      />
       <ChannelData />
       <UserList />
     </Grid>
