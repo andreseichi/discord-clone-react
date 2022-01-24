@@ -59,14 +59,19 @@ export const Button = styled.button<ServerButtonProps>`
 
   transition: border-radius 0.2s, background-color 0.2s;
 
-  &.active,
   &:hover {
     border-radius: 16px;
     background-color: var(--discord);
   }
 
-  > img {
+  > .homeIcon {
     width: 26px;
     height: 20px;
+  }
+
+  > .serverIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
   }
 `;

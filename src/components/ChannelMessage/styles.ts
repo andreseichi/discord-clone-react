@@ -50,6 +50,7 @@ export const Header = styled.div`
   > strong {
     color: var(--white);
     font-size: 16px;
+    font-weight: 500;
   }
 
   > span {
@@ -74,6 +75,7 @@ export const Header = styled.div`
 export const Content = styled.div`
   text-align: left;
   font-size: 16px;
+  font-weight: 400;
   color: var(--white);
 `;
 

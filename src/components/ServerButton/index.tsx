@@ -3,26 +3,30 @@ import { Button } from './styles';
 import Logo from '../../assets/discord-logo.png';
 
 export interface ServerButtonProps {
-  selected?: boolean;
+  isSelected?: boolean;
   isHome?: boolean;
   hasNotifications?: boolean;
   mentions?: number;
+  url?: string;
 }
 
 export function ServerButton({
-  selected,
+  isSelected,
   isHome,
   hasNotifications,
   mentions,
+  url,
 }: ServerButtonProps) {
   return (
     <Button
+      isSelected={isSelected}
       isHome={isHome}
       hasNotifications={hasNotifications}
       mentions={mentions}
-      className={selected ? 'active' : ''}
+      url={url}
     >
-      {isHome && <img src={Logo} alt="Server" />}
+      {url && <img src={url} alt="Server Icon" className="serverIcon" />}
+      {isHome && <img src={Logo} alt="Server" className="homeIcon" />}
     </Button>
   );
 }

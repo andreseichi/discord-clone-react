@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 import { Check } from 'styled-icons/bootstrap';
 
+import { AvatarProps } from '.';
+
 export const Container = styled.div`
   grid-area: UL;
 
   display: flex;
   flex-direction: column;
 
-  padding: 3px 6px 0 16px;
+  padding: 3px 6px 0 8px;
   background-color: var(--secondary);
   max-height: calc(100vh - 46px);
   overflow-y: scroll;
@@ -32,13 +34,16 @@ export const Role = styled.span`
 
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 500;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
   color: var(--gray);
+  margin-left: 8px;
 `;
 
 export const User = styled.div`
-  margin-top: 5px;
-  padding: 4px;
+  margin-top: 2px;
+  padding: 8px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -67,7 +72,7 @@ export const User = styled.div`
   }
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.div<AvatarProps>`
   flex-shrink: 0;
 
   width: 32px;
@@ -75,8 +80,37 @@ export const Avatar = styled.div`
   background-color: var(--discord);
   border-radius: 50%;
 
+  position: relative;
+
   &.bot {
     background-color: var(--mention-detail);
+  }
+
+  > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    background-color: var(--online);
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+
+    border-radius: 12px;
+    border: 4px solid var(--quaternary);
+
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--white);
+
+    display: ${(props) => (props.isOnline ? 'inline' : 'none')};
   }
 `;
 

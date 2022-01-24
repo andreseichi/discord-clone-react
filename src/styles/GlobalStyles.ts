@@ -40,5 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     --link: #5d80d6;
  
     --rocketseat: #6633cc;
+
+    --online: hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%);
   }
 `;
